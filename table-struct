@@ -1,0 +1,16 @@
+--- DB and Table structures ---
+
+
+
+Create table user (
+	user_id bigint not null auto_increment,
+	pseudo varchar(50) not null default '',
+	created datetime not null default current_timestamp,
+	modified datetime not null default current_timestamp on update current_timestamp,
+	email varchar(255) default null, 
+	birthday datetime default null,
+	PRIMARY KEY (user_id),
+	KEY u_pseudo_idx (pseudo)
+) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
